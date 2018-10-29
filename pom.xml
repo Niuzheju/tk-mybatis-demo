@@ -25,6 +25,12 @@
     </properties>
 
     <dependencies>
+        <!--pagehelper起步依赖, 使用此依赖后就不要自己配置插件了-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.9</version>
+        </dependency>
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>

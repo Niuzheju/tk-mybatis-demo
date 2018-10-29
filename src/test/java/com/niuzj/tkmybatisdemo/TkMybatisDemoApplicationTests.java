@@ -1,5 +1,6 @@
 package com.niuzj.tkmybatisdemo;
 
+import com.github.pagehelper.PageHelper;
 import com.niuzj.tkmybatisdemo.dao.CountryMapper;
 import com.niuzj.tkmybatisdemo.model.Country;
 import org.junit.Test;
@@ -11,6 +12,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 import java.util.List;
 
+/**
+ * 详细内容参考
+ * https://github.com/pagehelper/Mybatis-PageHelper
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @MapperScan(basePackages = "com.niuzj.tkmybatisdemo.dao")
@@ -81,6 +86,14 @@ public class TkMybatisDemoApplicationTests {
         country.setCountryname("中国");
         country.setCountrycode("001");
         countryMapper.updateByPrimaryKey(country);
+    }
+
+    @Test
+    public void test06(){
+        PageHelper.startPage(1, 10);
+        List<Country> list = countryMapper.selectAll();
+        System.out.println("\n" + list);
+        System.out.println(list.size());
     }
 
 }
