@@ -88,6 +88,7 @@ public class TkMybatisDemoApplicationTests {
         countryMapper.updateByPrimaryKey(country);
     }
 
+    //pagehelper分页
     @Test
     public void test06(){
         PageHelper.startPage(1, 10);
